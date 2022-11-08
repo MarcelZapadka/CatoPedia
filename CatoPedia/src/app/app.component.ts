@@ -7,21 +7,13 @@ import { CatInfoService } from './Service/cat-info.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  catInfo: any = [];
 
   constructor(
     private catService: CatInfoService
   ) {}
-
-  catPromise = new Promise((resolve, reject) => {
-    
-  });
-
+  
+  
   ngOnInit(): void {
-    this.catService.fetchCatsInfo();
-    setTimeout(() => {
-      this.catInfo = this.catService.allCats;
-    console.log(this.catInfo)
-    }, 2000);
+    this.catService.fetchRandomCatFact()
   }
 }

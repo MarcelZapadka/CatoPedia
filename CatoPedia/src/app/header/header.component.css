@@ -1,0 +1,73 @@
+header {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.logo { 
+    text-align: center;
+    padding-top: 10%;
+    color: black;
+    font-size: 10rem;
+    font-family: 'Poor Story', cursive;
+}
+
+.welcome-text {
+    text-align: center;
+    color: rgb(51, 218, 23);
+    font-size: 3.7rem;
+    font-family: 'Poor Story', cursive;
+    font-weight: 900;
+}
+
+.scratch-cat{
+    max-width: 25rem;
+    position: absolute;
+    left: -0.5%;
+    top: 52%;
+}
+
+.woo-cat {
+    max-width: 15rem;
+}
+
+.flying-cat {
+    position: absolute;
+    left: -5%;
+    top: -2%;
+}
+
+.explore,
+.random-fact {
+    margin-left: 41.5%;
+    margin-top: 2.5rem;
+    font-size: 3rem;
+    font-family: 'Poor Story', cursive;
+    font-weight: 600;
+    width: 15rem;
+    border-radius: 2rem;
+    background-color: rgb(51, 230, 23);
+    border: none;
+    cursor: pointer;
+    color: #333;
+    transition-duration: 0.2s;
+}
+
+.explore:hover {
+    background-color: rgb(51, 218, 23);
+    color: black;
+}
+
+.arm-cat {
+    position: absolute;
+    right: 5%;
+    bottom: 0%;
+}
+
+.angry-cat {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    max-width: 20rem;
+    transform: scaleX(-1);
+}

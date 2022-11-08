@@ -1,0 +1,14 @@
+.cat-facts {
+    background-color: rgb(231, 231, 231);
+    font-family: 'Poor Story', cursive;
+}
+
+.roll-info {
+    text-align: center;
+    font-size: 4rem;
+}
+
+.roll-section {
+    display: flex;
+    justify-content: space-around;
+}
