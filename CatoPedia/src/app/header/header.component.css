@@ -14,7 +14,7 @@ header {
 
 .welcome-text {
     text-align: center;
-    color: rgb(51, 218, 23);
+    color: rgb(252, 58, 114);
     font-size: 3.7rem;
     font-family: 'Poor Story', cursive;
     font-weight: 900;
@@ -46,7 +46,7 @@ header {
     font-weight: 600;
     width: 15rem;
     border-radius: 2rem;
-    background-color: rgb(51, 230, 23);
+    background-color: rgb(252, 58, 114);
     border: none;
     cursor: pointer;
     color: #333;
@@ -54,7 +54,7 @@ header {
 }
 
 .explore:hover {
-    background-color: rgb(51, 218, 23);
+    background-color: rgb(242, 58, 114);
     color: black;
 }
 

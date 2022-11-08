@@ -1,14 +1,82 @@
-.cat-facts {
+.facts-section{
     background-color: rgb(231, 231, 231);
     font-family: 'Poor Story', cursive;
 }
 
 .roll-info {
-    text-align: center;
+    margin-left: 6rem;
     font-size: 4rem;
+    transform: translateY(1rem);
 }
 
-.roll-section {
+.facts-wrapper {
     display: flex;
     justify-content: space-around;
+}
+
+.woo-cat {
+    max-width: 20rem;
+    max-height: 20rem;
+    transform: translateY(-2.2rem);
+}
+
+.cat-text {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 2rem;
+    transform: translateY(-2.2rem);
+    font-weight: 600;
+}
+
+.roll-button {
+    display: flex;
+    justify-content: space-around;
+    font-size: 2rem;
+    padding: 1rem;
+    border-radius: 30px;
+    background-color: rgb(252, 58, 114);;
+    border: none;
+    cursor: pointer;
+    margin: 2rem 6rem;
+    transition-duration: 0.3s;
+    color: #333;
+}
+
+.roll-button img {
+    max-width: 2rem;
+    padding-top: 3px;
+    margin-left: 1rem;
+    animation: roll-the-dice 3.5s ease-in-out infinite alternate-reverse;
+}
+
+.roll-button:hover {
+    background-color: rgb(242, 58, 114);;
+    color: black;
+}
+
+.roll-button:active {
+    transform: scale(0.9, 0.9);
+}
+
+.fact-window {
+    border: 2px solid rgb(242, 58, 114);
+    margin-top: 3rem;
+    border-radius: 15px;
+    background-color: white;
+    width: 30rem;
+    height: 10rem;
+    padding: 2rem;
+}
+
+.fact-text {
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+@keyframes roll-the-dice {
+    100% {
+        transform: rotate(180deg);
+    } 
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CatInfoService } from './Service/cat-info.service';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +6,12 @@ import { CatInfoService } from './Service/cat-info.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-
-  constructor(
-    private catService: CatInfoService
-  ) {}
+  disableOverflowX() {
+    document.body.style.overflowX = "hidden";
+  }
   
   
   ngOnInit(): void {
-    this.catService.fetchRandomCatFact()
+    this.disableOverflowX();
   }
 }

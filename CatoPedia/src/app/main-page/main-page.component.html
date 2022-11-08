@@ -1,9 +1,20 @@
-<main>
-    <section class="cat-facts">
+<section>
+    <section class="facts-section">
         <h2 class="roll-info">ROLL OUT RANDOM CAT FACT!</h2>
-        <div class="roll-section">
-            <img src="https://cdn-icons-png.flaticon.com/512/0/963.png" alt="">
-            <p class="rolled-fact">It may take as long as 2 weeks for a kitten to be … but sometimes it happens in as little as 2 days</p>
-        </div>
+        <div class="facts-wrapper">
+            <div>
+                <div class="fact-window">
+                    <p class="fact-text" id="cat-fact"> Click button to roll out random, useles cat facts!</p>
+                </div>
+                <button class="roll-button" (click)="fetchRandomCatFact()"> <p>Roll cat fact </p><img class="dice" src="https://cdn-icons-png.flaticon.com/512/0/963.png" alt="dice"> </button>   
+            </div>
+            <div >
+                <img class="woo-cat" src="https://user-images.githubusercontent.com/110595617/200301892-231bd40d-2386-4edb-8768-85fd186079c0.png" alt="WooCat">
+                <p class="cat-text">,,Wow, such a fact!"</p>
+            </div>
+        </div>         
     </section>
+</section>
+<main>
+    <!-- <img class="cat-image" src="{{cat.image.url}}" alt="cat"> -->
 </main>
