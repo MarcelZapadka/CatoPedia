@@ -8,19 +8,31 @@ import { CatInfoService } from '../Service/cat-info.service';
 })
 
 export class MainPageComponent implements OnInit {
-    allCats: any = []
+  allInfoAboutCats: any = []
 
   constructor(
     private catService: CatInfoService,
   ) { }
 
-  displayRandomCatFact() {
-    let catFactText = document.getElementById("cat-fact")!;
-    this.catService.fetchRandomCatFact();
-    catFactText.innerText = this.catService.randomCatFact.fact
+  async getCatFact() {
+    const catFactText: any = document.getElementById("cat-fact")!;
+    const catFact:any =  await this.catService.fetchCatfact();
+    catFactText.innerText = catFact.fact;
   }
 
+  async getCatsInfo() {
+    const catInfo = await this.catService.fetchCatsInfo();
+    this.allInfoAboutCats = catInfo;
+    console.log(this.allInfoAboutCats)
+  }
+  
+
   ngOnInit(): void {
-    this.catService.fetchRandomCatFact();
+  //this.getCatsInfo();
+  this.getCatFact()
   }
 }
+
+// Do zrobienia: opisać typy i zrobić interfejsy jeśli dam rade to ogarnąć (pray for this)
+// Jeśli możliwe to zrobić destrukturyzacje obiektu z infromacjami o kotach
+// Dokończyć aplikacje 
