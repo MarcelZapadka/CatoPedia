@@ -9,6 +9,8 @@ import { CatInfoService } from '../Service/cat-info.service';
 
 export class MainPageComponent implements OnInit {
   allInfoAboutCats: any = []
+  catname: string = ''
+
 
   constructor(
     private catService: CatInfoService,
@@ -25,10 +27,11 @@ export class MainPageComponent implements OnInit {
     this.allInfoAboutCats = catInfo;
     console.log(this.allInfoAboutCats)
   }
-  
 
+ 
+  
   ngOnInit(): void {
-  //this.getCatsInfo();
+  this.getCatsInfo();
   this.getCatFact()
   }
 }
