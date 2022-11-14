@@ -8,9 +8,9 @@ import { CatInfoService } from '../Service/cat-info.service';
 })
 
 export class MainPageComponent implements OnInit {
-  allInfoAboutCats: any = []
-  catname: string = ''
-
+  
+  filteredCatsInfo: any = []
+  catsSet: any = new Set()
 
   constructor(
     private catService: CatInfoService,
@@ -24,8 +24,9 @@ export class MainPageComponent implements OnInit {
 
   async getCatsInfo() {
     const catInfo = await this.catService.fetchCatsInfo();
-    this.allInfoAboutCats = catInfo;
-    console.log(this.allInfoAboutCats)
+    this.filteredCatsInfo = catInfo
+
+  
   }
 
  

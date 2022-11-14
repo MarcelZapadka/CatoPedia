@@ -74,6 +74,32 @@
     text-align: center;
 }
 
+.cat-cards-wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: wrap;
+}
+
+.cat-card {
+    background-color: rgb(242, 58, 114);
+    cursor: pointer;
+    margin-bottom: 2rem;
+    border: 3.5px solid #333;
+}
+
+.cat-image {
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.cat-name {
+    text-align: center;
+    font-family: 'Poor Story', cursive;
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+}
 
 @keyframes roll-the-dice {
     100% {
