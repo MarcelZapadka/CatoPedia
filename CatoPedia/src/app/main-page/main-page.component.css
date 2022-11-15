@@ -99,6 +99,8 @@
     font-size: 2rem;
     font-weight: 600;
     color: white;
+    border-top: 3px solid #333;
+    padding-bottom: 1rem;
 }
 
 @keyframes roll-the-dice {

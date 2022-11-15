@@ -8,9 +8,9 @@ import { CatInfoService } from '../Service/cat-info.service';
 })
 
 export class MainPageComponent implements OnInit {
-  
-  filteredCatsInfo: any = []
-  catsSet: any = new Set()
+
+  cats: any = []
+  uniqeCats: any = []
 
   constructor(
     private catService: CatInfoService,
@@ -24,11 +24,10 @@ export class MainPageComponent implements OnInit {
 
   async getCatsInfo() {
     const catInfo = await this.catService.fetchCatsInfo();
-    this.filteredCatsInfo = catInfo
-
-  
+    this.cats = catInfo;
+    this.uniqeCats = [...this.cats.reduce((map: any, obj: any) => map.set(obj.breeds[0].name, obj), new Map()).values()];
+    console.log(this.uniqeCats);
   }
-
  
   
   ngOnInit(): void {
