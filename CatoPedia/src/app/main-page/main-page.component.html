@@ -17,12 +17,12 @@
 </section>
 <main>
     <div class="cat-cards-wrapper">
-        <div class="cat-card" *ngFor="let cat of uniqeCats">
+        <div class="cat-card" *ngFor="let cat of uniqeCats; index as i" (click)="displayCatInfo()" id="cat-card-{{i}}">
             <div class="cat-card-inner">
-                <div class="cat-card-front">
-                <img class="cat-image" src="{{cat.url}}" alt="">
-                <p class="cat-name">{{ cat.breeds[0].name}}</p>
+                <div class="cat-card-image">
+                    <img class="cat-image" src="{{cat.url}}" alt="catImage">
                 </div>
+                <p class="cat-name">{{ cat.breeds[0].name}}</p>
             </div>
         </div>
     </div>
