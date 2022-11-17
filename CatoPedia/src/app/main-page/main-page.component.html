@@ -10,14 +10,14 @@
             </div>
             <div >
                 <img class="woo-cat" src="https://user-images.githubusercontent.com/110595617/200301892-231bd40d-2386-4edb-8768-85fd186079c0.png" alt="WooCat">
-                <p class="cat-text">,,Wow, such a fact!"</p>
+                <p class="cat-text">,,Wow, amazing fact!"</p>
             </div>
         </div>         
     </section>
 </section>
 <main>
     <div class="cat-cards-wrapper">
-        <div class="cat-card" *ngFor="let cat of uniqeCats; index as i" (click)="displayCatInfo()" id="cat-card-{{i}}">
+        <div class="cat-card" *ngFor="let cat of filteredCats; index as i" (click)="displayCatInfo()" id="cat-card-{{i}}">
             <div class="cat-card-inner">
                 <div class="cat-card-image">
                     <img class="cat-image" src="{{cat.url}}" alt="catImage">
@@ -26,19 +26,24 @@
             </div>
         </div>
     </div>
+    
 </main>
-
-
-
-
-
-
-    <!-- <img class="cat-image" src="{{cat.image.url}}" alt="cat"> -->
-
-
-    <!-- 
-        1. Create flexbox wrapping area for cards
-        2. Place cards within it
-        3.Style the cards
-        4. 
-     -->
+<div class="overlay" id="overlay" (click)="hideCatInfo()"></div>
+<section class="cat-popup" id="cat-popup">
+    <img class="cat-detail-image" src="{{catImageUrl}}" alt="catImage">
+    <div class="cat-popup-info">
+        <p class="cat-info-name">{{catName}}</p>
+        <p class="cat-info-description">{{catDescription}}</p>
+        <p class="traits"><span>Character:</span> {{catTemperament}}</p>
+        <p class="traits"><span>Life span:</span> {{catLifeSpan}} years</p>
+        <p class="traits"><span>Weight:</span> {{catWeightMetric}} kilograms ({{catWeightImperial}} pounds)</p>
+        <p class="traits"><span>Intelligence:</span> {{catIntelligence}}</p>
+        <p class="traits"><span>Attitude towards children:</span> {{isCatChildFriendly}}</p>
+        <p class="traits"><span>Affection:</span> {{catAffectionLevel}}</p>
+        <p class="traits"><span>Health issues:</span> {{catHealthIssues}}</p>
+        <p class="traits"><span>Adaptability:</span> {{catAdaptability}}</p>
+        <p class="traits"><span>Social needs:</span> {{catSocialNeeds}}</p>
+        <p class="traits"><span>Attitude towards strangers:</span> {{isCatStrangerFriendly}}</p>
+        <p class="wiki-link">See more on <a href="{{catWikiLink}}" target="_blank"> Wikipedia </a></p>
+    </div>
+</section>

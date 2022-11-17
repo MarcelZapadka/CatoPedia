@@ -50,7 +50,7 @@
 }
 
 .roll-button:hover {
-    background-color: rgb(242, 58, 114);;
+    background-color: rgb(242, 58, 114);
     color: black;
 }
 
@@ -111,6 +111,95 @@
     color: white;
     background-color: rgb(242, 58, 114);
     border-top: 4px solid #333;
+}
+
+.cat-popup {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s ease-in-out;
+    width: 80rem;
+    height: 38rem;
+}
+
+.cat-detail-image {
+    width: 40rem;
+    height: 38rem;
+    object-fit: cover;
+}
+
+.cat-popup-info {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 1.2rem
+}
+
+.cat-info-name {
+    font-family: 'Poor Story', cursive;
+    font-size: 4rem;
+    color: rgb(242, 58, 114);
+    text-align: center;
+}
+
+.cat-info-description {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 1.2rem;
+}
+
+span {
+    color: rgb(0, 115, 230);
+    font-size: 1.2rem;
+}
+
+.traits {
+    margin-bottom: 0.4rem;
+}
+
+.wiki-link {
+    text-align: center;
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+
+}
+
+.wiki-link:hover {
+    color: red;
+}
+
+.overlay {
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+    z-index: 1;
+    transition: 0.4s ease-in-out;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.cat-popup.active {
+    opacity: 1;
+    pointer-events: all;
 }
 
 @keyframes roll-the-dice {
