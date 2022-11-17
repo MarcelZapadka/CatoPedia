@@ -15,6 +15,12 @@
         </div>         
     </section>
 </section>
+<section class="loading-screen" *ngIf="displayLoading">
+    <div class="loading-wrapper">
+        <div class="loading-icon"></div>
+        <p class="loading-text">Cats are loading, please wait</p>
+    </div>
+</section>
 <main>
     <div class="cat-cards-wrapper">
         <div class="cat-card" *ngFor="let cat of filteredCats; index as i" (click)="displayCatInfo()" id="cat-card-{{i}}">
@@ -26,8 +32,8 @@
             </div>
         </div>
     </div>
-    
 </main>
+
 <div class="overlay" id="overlay" (click)="hideCatInfo()"></div>
 <section class="cat-popup" id="cat-popup">
     <img class="cat-detail-image" src="{{catImageUrl}}" alt="catImage">
@@ -46,4 +52,5 @@
         <p class="traits"><span>Attitude towards strangers:</span> {{isCatStrangerFriendly}}</p>
         <p class="wiki-link">See more on <a href="{{catWikiLink}}" target="_blank"> Wikipedia </a></p>
     </div>
+    <div class="escape-button" (click)="hideCatInfo()">&#215;</div>
 </section>

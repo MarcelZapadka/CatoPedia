@@ -27,6 +27,7 @@ export class MainPageComponent implements OnInit {
   catTemperament: string = '';
   catLifeSpan: string = '';
   catWikiLink: string = '';
+  displayLoading: boolean = true
   
   constructor(
     private catService: CatInfoService,
@@ -41,9 +42,12 @@ export class MainPageComponent implements OnInit {
   async getCatsInfo() {
     const catInfo = await this.catService.fetchCatsInfo();
     this.allCats = catInfo;
-    this.filteredCats = [...this.allCats.reduce((map: any, obj: any) => map.set(obj.breeds[0].id, obj), new Map()).values()];
+    this.filteredCats = [...this.allCats.reduce((map: any, obj: any) => map.set(obj?.breeds[0]?.name, obj), new Map()).values()];
+    this.displayLoading = false
     console.log(this.filteredCats);
   }
+
+
   
   displayCatInfo() {
     for (let i = 0; i < 60; i++ ) {
