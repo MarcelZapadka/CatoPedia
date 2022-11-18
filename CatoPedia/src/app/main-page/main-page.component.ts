@@ -9,13 +9,13 @@ import { CatInfoService } from '../Service/cat-info.service';
 
 export class MainPageComponent implements OnInit {
 
-  isCatStrangerFriendly: string | number = ''
-  catSocialNeeds: string | number = ''
-  catAdaptability: number | string = ''
-  catHealthIssues: string | number = ''
-  catWeightImperial: string = ''
-  catIntelligence: number | string = ''
-  isCatChildFriendly: string | number = ''
+  isCatStrangerFriendly: string | number = '';
+  catSocialNeeds: string | number = '';
+  catAdaptability: number | string = '';
+  catHealthIssues: string | number = '';
+  catWeightImperial: string = '';
+  catIntelligence: number | string = '';
+  isCatChildFriendly: string | number = '';
   catAffectionLevel: string | number = '';
   catOrigin: string = '';
   catImageUrl: string = '';
@@ -27,7 +27,9 @@ export class MainPageComponent implements OnInit {
   catTemperament: string = '';
   catLifeSpan: string = '';
   catWikiLink: string = '';
-  displayLoading: boolean = true
+  displayLoading: boolean = true;
+  displayFilterBar: boolean = false;
+  searchedCat: string = '';
   
   constructor(
     private catService: CatInfoService,
@@ -40,15 +42,18 @@ export class MainPageComponent implements OnInit {
   }
 
   async getCatsInfo() {
-    const catInfo = await this.catService.fetchCatsInfo();
+    try{
+      const catInfo = await this.catService.fetchCatsInfo();
     this.allCats = catInfo;
     this.filteredCats = [...this.allCats.reduce((map: any, obj: any) => map.set(obj?.breeds[0]?.name, obj), new Map()).values()];
-    this.displayLoading = false
-    console.log(this.filteredCats);
+    this.displayLoading = false;
+    this.displayFilterBar = true;
+    this.filteredCats = this.filteredCats.slice(0, -1);
+    } catch (err) {
+      console.log(err)
+    }
   }
 
-
-  
   displayCatInfo() {
     for (let i = 0; i < 60; i++ ) {
       let catCardId = document.getElementById("cat-card-" + i);
@@ -74,7 +79,6 @@ export class MainPageComponent implements OnInit {
       this.displayAdditionalCatInfo();
       overlay.classList.add("active");
       catPopUp?.classList.add("active");
-
       })
     }
   }
@@ -95,18 +99,18 @@ export class MainPageComponent implements OnInit {
         this.isCatChildFriendly = "Unfriendly";
         this.catHealthIssues = "Very rarely";
         this.catAdaptability = "Low";
-        this.isCatStrangerFriendly = "Distrustful"
-        this.catSocialNeeds = "Low"
-        break;
+        this.isCatStrangerFriendly = "Distrustful";
+        this.catSocialNeeds = "Low";
+      break;
       case 3:
         this.catIntelligence = "Medium";
         this.catAffectionLevel = "Medium";
         this.isCatChildFriendly = "Neutral";
         this.catHealthIssues = "Sometimes";
         this.catAdaptability = "Medium";
-        this.isCatStrangerFriendly = "Neutral"
-        this.catSocialNeeds = "Medium"
-        break;
+        this.isCatStrangerFriendly = "Neutral";
+        this.catSocialNeeds = "Medium";
+      break;
       case 4:
       case 5:
         this.catIntelligence = "High";
@@ -114,9 +118,9 @@ export class MainPageComponent implements OnInit {
         this.isCatChildFriendly = "Friendly";
         this.catHealthIssues = "Very often";
         this.catAdaptability = "High";
-        this.isCatStrangerFriendly = "Friendly"
-        this.catSocialNeeds = "High"
-        break;
+        this.isCatStrangerFriendly = "Friendly";
+        this.catSocialNeeds = "High";
+      break;
     }
   }
 

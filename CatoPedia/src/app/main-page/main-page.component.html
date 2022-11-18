@@ -18,12 +18,17 @@
 <section class="loading-screen" *ngIf="displayLoading">
     <div class="loading-wrapper">
         <div class="loading-icon"></div>
-        <p class="loading-text">Cats are loading, please wait</p>
+        <p class="loading-text">Cats are loading, please wait or refresh the page </p>
     </div>
 </section>
 <main>
+    <section class="search-bar" *ngIf="displayFilterBar"> 
+        <p class="double-click-info">Double click to see cat info!</p>
+        <label for="searchCat">Search cat: </label>
+        <input class="search-input" id="searchCat" type="text" name="search" placeholder="British Longhair" [(ngModel)]="searchedCat">
+    </section>
     <div class="cat-cards-wrapper">
-        <div class="cat-card" *ngFor="let cat of filteredCats; index as i" (click)="displayCatInfo()" id="cat-card-{{i}}">
+        <div class="cat-card" *ngFor="let cat of filteredCats | filter:searchedCat; index as i" (click)="displayCatInfo()" id="cat-card-{{i}}">
             <div class="cat-card-inner">
                 <div class="cat-card-image">
                     <img class="cat-image" src="{{cat.url}}" alt="catImage">

@@ -78,6 +78,7 @@
     display: flex;
     justify-content: space-around;
     flex-flow: wrap;
+    margin-top: 1rem;
 }
 
 .cat-card {
@@ -225,7 +226,7 @@ span {
     border: 4px solid black;
     border-bottom: 4px solid rgb(0, 115, 230);
     animation: loading 2s infinite linear ;
-    margin-left: 8rem;
+    margin-left: 16rem;
 }
 
 .loading-text {
@@ -242,6 +243,33 @@ span {
     transform: translate(-50%, -50%);
 }
 
+.search-input {
+    margin-left: 1rem;
+    margin-top: 1.5rem;
+    border: 2px solid #333;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    width: 80vw;
+    font-family: 'Poor Story', cursive;
+    font-weight: 600;
+}
+
+label {
+    margin-top: 1.5rem;
+    font-size: 2.5rem;
+    margin-left: 3rem;
+    font-family: 'Poor Story', cursive;
+    font-weight: 600;
+}
+
+.double-click-info {
+    font-family: 'Poor Story', cursive;
+    font-weight: 600;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
 @keyframes roll-the-dice {
     100% {
         transform: rotate(180deg);
@@ -255,5 +283,173 @@ span {
 
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 1280px) {
+    .woo-cat {
+    transform: translate(3rem, -2rem);
+    }
+
+    .cat-text {
+        transform: translate(4rem, -3rem);
+    }
+
+    .search-input {
+        margin-left: 3rem;
+    }
+
+    .cat-popup {
+        width: 65rem;
+        height: 28rem;
+    }
+
+    .cat-detail-image {
+        width: 30rem;
+        height: 28rem;
+    }    
+
+    .cat-info-name {
+        font-size: 3rem;
+    }
+
+    .cat-info-description {
+        font-size: 0.85rem;
+    }
+
+    .traits {
+        font-size: 0.9rem;
+    }
+
+    span { font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .woo-cat {
+        max-width: 15rem;
+        max-height: 15rem;
+        transform: translate(-1rem, 1.5rem);
+    }
+
+    .cat-text {
+        transform: translate(-1.5rem, 1rem);
+    }
+
+    .loading-text {
+        font-size: 1.75rem;
+    }
+
+    .loading-icon {
+        margin-left: 13.5rem;
+    }
+
+    .cat-popup {
+        width: 80vw;
+        height: 70vh;
+    }
+
+    .cat-detail-image {
+        display: none;
+    }
+    
+    .traits {
+        font-size: 1.5rem;
+    }
+
+    .cat-info-description {
+        font-size: 2rem;
+    }
+
+    .cat-info-name {
+        font-size: 5rem;
+    }
+
+    span {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 410px) {
+    .facts-section {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .roll-info {
+        font-size: 2rem;
+        margin: 0;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .woo-cat {
+        display: none;
+    }
+
+    .cat-text {
+        display: none;
+    }
+
+    .fact-window {
+        width: 300px;
+        height: 200px;
+        margin-left: 2rem;
+    }
+
+    .roll-button {
+        width: 200px;
+    }
+
+    .double-click-info {
+        margin-right: 1rem;
+        padding: 1rem;
+    }
+
+    .search-input {
+        width: 15rem;
+        margin-left: 1rem;
+    }
+
+    .cat-card {
+        transform: scale(0.7);
+        margin-bottom: 0.2rem;
+    }
+
+    .loading-icon {
+        margin-left: 2.5rem;
+    }
+
+    .loading-text {
+        font-size: 1.5rem;
+    }
+
+    .cat-popup {
+        width: 86vw;
+        height: 86vh;
+        left: 40%;
+    }
+
+    .traits {
+        font-size: 0.7rem;
+    }
+
+    .cat-info-description {
+        font-size: 0.8rem;
+    }
+
+    .cat-info-name {
+        font-size: 2rem;
+    }
+
+    .wiki-link {
+        font-size: 1.2rem;
+    }
+    span {
+        font-size: 0.7rem;
+    }
+
+    .fact-text {
+        font-size: 1.2rem;
     }
 }

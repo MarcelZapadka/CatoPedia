@@ -37,8 +37,7 @@ header {
     top: -2%;
 }
 
-.explore,
-.random-fact {
+.explore {
     margin-left: 41.5%;
     margin-top: 2.5rem;
     font-size: 3rem;
@@ -70,4 +69,50 @@ header {
     right: 5%;
     max-width: 20rem;
     transform: scaleX(-1);
+}
+
+@media (max-width: 1024px) {
+    .scratch-cat,
+    .angry-cat,
+    .arm-cat,
+    .flying-cat {
+        display: none;
+    }
+
+    .logo-wrapper {
+        margin-top: 20rem;
+    }
+
+    .explore {
+        margin-left: 38%;
+    }
+}
+
+@media (max-width: 410px) {
+    .logo {
+       font-size: 2rem;
+    }
+
+    .welcome-text {
+       font-size: 2rem;
+       padding: 1rem;
+    }
+
+    .logo-wrapper {
+       width: 300px;
+       height: 300px;
+       margin: 0;
+       position: absolute;
+       top: 50%;
+       transform: translateY(-60%);
+    }
+    
+    .explore {
+       position: absolute;
+       top: 50%;
+       margin: 0;
+       left: 10%;
+       font-size: 1.5rem;
+
+}
 }
