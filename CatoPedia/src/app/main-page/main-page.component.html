@@ -15,6 +15,7 @@
         </div>         
     </section>
 </section>
+
 <section class="loading-screen" *ngIf="displayLoading">
     <div class="loading-wrapper">
         <div class="loading-icon"></div>
@@ -22,13 +23,9 @@
     </div>
 </section>
 <main>
-    <section class="search-bar" *ngIf="displayFilterBar"> 
-        <p class="double-click-info">Double click to see cat info!</p>
-        <label for="searchCat">Search cat: </label>
-        <input class="search-input" id="searchCat" type="text" name="search" placeholder="British Longhair" [(ngModel)]="searchedCat">
-    </section>
+    <p class="double-click-info" *ngIf="displayText">Double click to see cat info!</p>
     <div class="cat-cards-wrapper">
-        <div class="cat-card" *ngFor="let cat of filteredCats | filter:searchedCat; index as i" (click)="displayCatInfo()" id="cat-card-{{i}}">
+        <div class="cat-card" *ngFor="let cat of filteredCats; index as i" (click)="displayCatInfo()" id="cat-card-{{i}}">
             <div class="cat-card-inner">
                 <div class="cat-card-image">
                     <img class="cat-image" src="{{cat.url}}" alt="catImage">

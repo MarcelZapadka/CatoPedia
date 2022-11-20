@@ -28,8 +28,7 @@ export class MainPageComponent implements OnInit {
   catLifeSpan: string = '';
   catWikiLink: string = '';
   displayLoading: boolean = true;
-  displayFilterBar: boolean = false;
-  searchedCat: string = '';
+  displayText: boolean = false;
   
   constructor(
     private catService: CatInfoService,
@@ -47,7 +46,7 @@ export class MainPageComponent implements OnInit {
     this.allCats = catInfo;
     this.filteredCats = [...this.allCats.reduce((map: any, obj: any) => map.set(obj?.breeds[0]?.name, obj), new Map()).values()];
     this.displayLoading = false;
-    this.displayFilterBar = true;
+    this.displayText = true;
     this.filteredCats = this.filteredCats.slice(0, -1);
     } catch (err) {
       console.log(err)
