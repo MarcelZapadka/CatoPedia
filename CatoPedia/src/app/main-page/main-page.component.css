@@ -370,6 +370,21 @@ label {
     }
 }
 
+@media (max-width: 1024px) {
+    .cat-info-description {
+        font-size: 1rem;
+    }
+
+    .cat-info-name {
+        font-size: 2rem;
+    }
+
+    .traits,
+    span {
+        font-size: 0.9rem;
+    }
+}
+
 @media (max-width: 430px) {
     .facts-section {
         width: 120vw;
